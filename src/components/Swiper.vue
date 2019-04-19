@@ -1,16 +1,14 @@
 <template>
   <div class="swiper_content">
     <swiper :options="swiperOption">
-      <swiper-slide>Slide 1</swiper-slide>
+      <swiper-slide>
+        <div class="coin_content">
+          <div class="logo">
+            <img src="../assets/logo1.png" alt>
+          </div>
+        </div>
+      </swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
-      <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
-      <swiper-slide>Slide 6</swiper-slide>
-      <swiper-slide>Slide 7</swiper-slide>
-      <swiper-slide>Slide 8</swiper-slide>
-      <swiper-slide>Slide 9</swiper-slide>
-      <swiper-slide>Slide 10</swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
   </div>
@@ -29,9 +27,12 @@ export default {
     return {
       swiperOption: {
         direction: "vertical",
+        autoplay: true,
+        speed: 300,
         pagination: {
           el: ".swiper-pagination",
-          clickable: true
+          clickable: true,
+          currentClass: "bullet_current"
         }
       }
     };
@@ -44,5 +45,16 @@ export default {
   width: 1280px;
   margin: 20px auto 0;
   height: 100px;
+  .swiper-container {
+    height: 100px;
+    width: 100%;
+    background: rgba(38, 47, 56, 1);
+    color: #fff;
+    .coin_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }
 </style>
